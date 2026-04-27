@@ -1,0 +1,48 @@
+\hypertarget{classtest__tree_1_1TestTreeFind}{}\doxysection{test\+\_\+tree.\+Test\+Tree\+Find Class Reference}
+\label{classtest__tree_1_1TestTreeFind}\index{test\_tree.TestTreeFind@{test\_tree.TestTreeFind}}
+
+
+Inheritance diagram for test\+\_\+tree.\+Test\+Tree\+Find\+:
+% FIG 0
+
+
+Collaboration diagram for test\+\_\+tree.\+Test\+Tree\+Find\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtest__tree_1_1TestTreeFind_a784c08a236a1910ab0d79b15ee26e1fa}\label{classtest__tree_1_1TestTreeFind_a784c08a236a1910ab0d79b15ee26e1fa}} 
+def {\bfseries set\+Up} (self)
+\item 
+def \mbox{\hyperlink{classtest__tree_1_1TestTreeFind_a32145d24ff04bc4f9a6847d9ff4e4ef3}{test\+\_\+find\+\_\+non\+\_\+existing\+\_\+node}} (self)
+\item 
+def \mbox{\hyperlink{classtest__tree_1_1TestTreeFind_a5d7562f48b476e688b920920c89a4638}{test\+\_\+find\+\_\+in\+\_\+empty\+\_\+tree}} (self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtest__tree_1_1TestTreeFind_a7f357d69fbfb8f98c0ab82515512a8c8}\label{classtest__tree_1_1TestTreeFind_a7f357d69fbfb8f98c0ab82515512a8c8}} 
+{\bfseries tree}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classtest__tree_1_1TestTreeFind_a5d7562f48b476e688b920920c89a4638}\label{classtest__tree_1_1TestTreeFind_a5d7562f48b476e688b920920c89a4638}} 
+\index{test\_tree.TestTreeFind@{test\_tree.TestTreeFind}!test\_find\_in\_empty\_tree@{test\_find\_in\_empty\_tree}}
+\index{test\_find\_in\_empty\_tree@{test\_find\_in\_empty\_tree}!test\_tree.TestTreeFind@{test\_tree.TestTreeFind}}
+\doxysubsubsection{\texorpdfstring{test\_find\_in\_empty\_tree()}{test\_find\_in\_empty\_tree()}}
+{\footnotesize\ttfamily def test\+\_\+tree.\+Test\+Tree\+Find.\+test\+\_\+find\+\_\+in\+\_\+empty\+\_\+tree (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb} cautare in arbore nou, gol\end{DoxyVerb}
+ \mbox{\Hypertarget{classtest__tree_1_1TestTreeFind_a32145d24ff04bc4f9a6847d9ff4e4ef3}\label{classtest__tree_1_1TestTreeFind_a32145d24ff04bc4f9a6847d9ff4e4ef3}} 
+\index{test\_tree.TestTreeFind@{test\_tree.TestTreeFind}!test\_find\_non\_existing\_node@{test\_find\_non\_existing\_node}}
+\index{test\_find\_non\_existing\_node@{test\_find\_non\_existing\_node}!test\_tree.TestTreeFind@{test\_tree.TestTreeFind}}
+\doxysubsubsection{\texorpdfstring{test\_find\_non\_existing\_node()}{test\_find\_non\_existing\_node()}}
+{\footnotesize\ttfamily def test\+\_\+tree.\+Test\+Tree\+Find.\+test\+\_\+find\+\_\+non\+\_\+existing\+\_\+node (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}vedem daca functia returneaza None pentru valori care nu exista.\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+test\+\_\+tree.\+py\end{DoxyCompactItemize}

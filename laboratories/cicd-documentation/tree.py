@@ -53,6 +53,7 @@ class Tree:
             return None
 
     def _find(self, data, node):
+        """gaseste nodul """
         if data == node.data:
             return node
         elif (data < node.data and node.left is not None):
@@ -61,19 +62,23 @@ class Tree:
             return self._find(data, node.right)
 
     def deleteTree(self):
+        """ stergere arbore """
         self.root = None
 
     def printTree(self):
+        """ printare arbore"""
         if self.root is not None:
             self._printInorderTree(self.root)
 
     def _printInorderTree(self, node):
+        """ printare parcurgere SRD"""
         if node is not None:
             self._printInorderTree(node.left)
             print(str(node.data) + ' ')
             self._printInorderTree(node.right)
 
     def _printPreorderTree(self, node):
+        """ printare parcurgere RSD"""
         # TODO
         if node is not None:
             print(str(node) + ' ')
@@ -82,6 +87,7 @@ class Tree:
 
 
     def _printPostorderTree(self, node):
+        """ printare parcurgere SDR """
         # TODO
         if node is not None:
             self._printPostorderTree(node.left)
