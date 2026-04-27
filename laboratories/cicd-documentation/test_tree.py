@@ -22,7 +22,7 @@ class TestTreeFind(unittest.TestCase):
         """ cautare in arbore nou, gol"""
         empty_tree = Tree()
         gasit = empty_tree.find(3)
-        self.assertIsNone(gasit, "Cautarea intr-un arbore gol returneaza None.")
+        self.assertIsNone(gasit, "cautarea intr-un arbore gol returneaza None.")
 
 if __name__ == '__main__':
     unittest.main()
