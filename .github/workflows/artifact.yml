@@ -1,0 +1,26 @@
+name: Generate Doxygen
+on:
+  push:
+    tags:
+      - 'v*'
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Doxygen
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Run Doxygen
+        run: doxygen Doxyfile
+
+      - name: Upload Documentation Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: doxygen-docs-${{ github.ref_name }} 
+          path: html/
+          retention-days: 30
