@@ -15,11 +15,11 @@ def create_book_service():
     - Use default BookFilterService
     
     HINTS:
-    repository = ...
-    book_filter_service = ...
-    return BookService(repository, book_filter_service)
     """
-    pass
+    repository = InMemoryBookRepository()
+    book_filter_service = BookFilterService()
+    return BookStoreService(repository, book_filter_service)
+
 
 
 # TODO: Create a fixture that returns a sample book for testing
@@ -32,7 +32,9 @@ def create_sample_book():
     REQUIREMENTS:
     - Book should have valid, testable attributes
     """
-    pass
+    book = Book("Pride and Prejudice", "Jane Austen", "Romance", 35.5)
+    return book
+
 
 
 # INFO: For the following tests, use only the BookService instance created by the fixture
@@ -51,7 +53,14 @@ def test_add_book():
     - Verify ID is automatically assigned
     """
     # Your implementation here
-    pass
+    book_service = create_book_service()
+    book1 = create_sample_book()
+    book_service.add(book1)
+    assert book1.id is not None
+    assert book1.title == "Pride and Prejudice"
+    assert book1.author == "Jane Austen"
+    assert book1.genre == "Romance"
+    assert book1.price == 35.5
 
 
 def test_add_book_validation():
@@ -69,10 +78,18 @@ def test_add_book_validation():
     - Use pytest.raises() to check for exceptions
     """
     # Your implementation here
-    pass
+    book_service = create_book_service()
+    invalid_book = Book ("Persuasion", "", "Romance", 30)
+    with pytest.raises(ValueError):
+        book_service.add(invalid_book)   
+    
+    invalid_book2 = Book ("", "Jane Austen", "Romance", 30.5)
+    with pytest.raises(ValueError):
+        book_service.add(invalid_book2)
 
 
 # INFO: Here you should use @pytest.mark.parametrize to test multiple genres
+@pytest.mark.parametrize("test_genre, expected_count", [("Romance", 1), ("Dystopian", 1), ("Sci-Fi", 1), ("Horror", 1)] )
 def test_get_books_by_genre():
     """
     TESTING OBJECTIVES:
@@ -91,8 +108,16 @@ def test_get_books_by_genre():
     - Check length and genre of returned books
     """
     # Your implementation here
-    pass
+    book_service = create_book_service()
+    book1 = Book ("Persuasion", "Jane Austen", "Romance", 30.5)
+    book2 = Book ("1985", "George Orwell", "Dystopian", 20)
+    book3 = Book ("Foundation", "Isaac Asimov", "Sci-Fi", 40)
 
+    book_service.add(book1)
+    book_service.add(book2)
+    book_service.add(book3)
+
+    results = book_service.get_books(genre=test_genre)
 
 # INFO: Here you should use @pytest.mark.parametrize to test multiple price ranges
 def test_price_range_filtering():
