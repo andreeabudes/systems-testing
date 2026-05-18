@@ -6,30 +6,37 @@ import re
 """
 Completati functiile de mai si observati cum atheris despisteaza exceptii
 """
-
+@atheris.instrument_func
 def extract_numbers(s: str) -> list:
     """
     Returnează o listă de numere întregi găsite în string.
     Ex: "abc123def45" -> [123, 45]
     TODO
     """
-    pass
+    numere_gasite = re.findall(r'\d+', s)
+    return [int(n) for n in numere_gasite]
 
-
+@atheris.instrument_func
 def safe_divide_list(numbers: list) -> float:
     """
     Împarte primul număr la al doilea.
     TODO
     """
-    pass
+    if len(numbers) >= 2:
+        return float(numbers[0] / numbers[1])
+    
+    return 0.0
 
-
+@atheris.instrument_func
 def list_sum(numbers: list) -> int:
     """
     Calculează suma tuturor numerelor din listă.
     TODO
     """
-    pass
+    sumNum = 0
+    for i in numbers:
+        sumNum += i
+    return sumNum
 
 
 def process_input(data: bytes):
